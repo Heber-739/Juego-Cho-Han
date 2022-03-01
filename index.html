@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cho Han - Juegue y gane!</title>
+    <link rel="stylesheet" media="(min-width: 768px)" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      media="(min-width: 481px) and (max-width: 768px)"
+      href="./css/style_tablet.css"
+    />
+    <link
+      rel="stylesheet"
+      media="(max-width: 480px)"
+      href="./css/style_movile.css"
+    />
+  </head>
+  <body>
+    <div id="saldo" class="box">
+      <p>Saldo:</p>
+
+      <p id="billetera"></p>
+      <p>Apuesta:</p>
+      <p id="apostando"></p>
+    </div>
+    <div id="resultado" class="box">
+      <p>Resultado:</p>
+      <p id="suma" class="suma"></p>
+      <p>+</p>
+      <p id="resta" class="suma"></p>
+      <p id="sel"></p>
+    </div>
+    <!--     <div id="resultado2" class="box"></div>-->
+    <header class="box">
+      <h1 id="titulo">Comienza el Juego</h1>
+    </header>
+    <main>
+      <section id="section1">
+        <div id="presentacion" class="box">
+          <form id="form" onsubmit="return false">
+            <input
+              type="text"
+              id="nombre"
+              placeholder="¿Cuál es tu nombre?"
+              class="input"
+              autocomplete="off"
+              autofocus
+            />
+            <input
+              type="number"
+              id="shibas"
+              placeholder="Shibas a apostar"
+              class="input"
+              min="1"
+              autocomplete="off"
+            />
+            <button id="button" class="button" onclick="cargar_datos()">
+              Start!
+            </button>
+          </form>
+          <p id="bienvenida"></p>
+          <p id="mensajes"></p>
+          <div id="continuar" class="continuar">
+            <p id="continue">¿Desea continuar?</p>
+            <div id="si_cont" class="btn" onclick="continuar('si')">
+              <p>Si</p>
+            </div>
+            <div id="no_cont" class="btn" onclick="continuar('no')">
+              <p>No</p>
+            </div>
+          </div>
+          <p id="despedida"></p>
+        </div>
+        <div id="apuestas" class="box">
+          <form onsubmit="return false">
+            <input
+              type="number"
+              placeholder="¿Cuánto apostará?"
+              id="apuesta"
+              class="input"
+              autocomplete="off"
+            />
+            <button id="par" class="button" onclick="evaluar('par')">
+              ¿Par?
+            </button>
+            <button id="impar" class="button" onclick="evaluar('impar')">
+              ¿Impar?
+            </button>
+          </form>
+        </div>
+      </section>
+      <section id="section2">
+        <div id="cuerpo" class="box">
+          <div class="cont_dados box">
+            <!-- -------------Dado1--------------- -->
+            <div id="cara1" class="dado1 grid">
+              <div id="valor1_1" class="cir1 circulo1"></div>
+              <div id="valor2_1" class="cir1 circulo2"></div>
+              <div id="valor3_1" class="cir1 circulo3"></div>
+              <div id="valor4_1" class="cir1 circulo4"></div>
+              <div id="valor5_1" class="cir1 circulo5"></div>
+              <div id="valor6_1" class="cir1 circulo6"></div>
+              <div id="valor7_1" class="cir1 circulo7"></div>
+            </div>
+
+            <!-- -------------Dado2--------------- -->
+          </div>
+          <div class="cont_dados box">
+            <div id="seca1" class="dado2 grid">
+              <div id="valor1_2" class="cir2 circulo1"></div>
+              <div id="valor2_2" class="cir2 circulo2"></div>
+              <div id="valor3_2" class="cir2 circulo3"></div>
+              <div id="valor4_2" class="cir2 circulo4"></div>
+              <div id="valor5_2" class="cir2 circulo5"></div>
+              <div id="valor6_2" class="cir2 circulo6"></div>
+              <div id="valor7_2" class="cir2 circulo7"></div>
+            </div>
+          </div>
+        </div>
+        <div id="refresh" class="button">
+          <p>Refresh</p>
+          <img
+            src="./img/refresh.png"
+            alt="refresh"
+            onclick="location.reload()"
+          />
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Autoría <strong><em>Heber Duarte</em></strong>
+      </p>
+      <p>Icon by <a href="https://iconos8.es/" target="_blank">Icons8</a></p>
+      <p id="git">
+        <img src="./img/github.png" alt="logo github" /><a
+          href="https://github.com/Heber-739"
+          target="_blank"
+          >Github</a
+        >
+      </p>
+    </footer>
+    <script src="./javascript/principal.js"></script>
+    <script src="./javascript/dados.js"></script>
+  </body>
+</html>
