@@ -1,4 +1,7 @@
-html {
+* {
+  box-sizing: border-box;
+}
+body {
   background-image: linear-gradient(
     225deg,
     #ff3cac 0%,
@@ -6,229 +9,220 @@ html {
     #2b86c5 100%
   );
   background-repeat: no-repeat;
+  color: white;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 24vw 24vw 24vw 24vw;
+  grid-template-rows: 7vh 7vh 50vh 20vh;
+  justify-items: stretch;
+  row-gap: 9px;
+  column-gap: 1.33vw;
+  margin: 5px 0px;
+  grid-auto-flow: row;
 }
 .box {
   border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px 1px black;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px black;
 }
+
 header {
-  display: flex;
-  width: 65vw;
+  align-self: center;
+  width: 80%;
   max-width: 350px;
-  height: auto;
-  padding: 1vh;
-  margin: 10px auto;
   text-align: center;
-  background: rgba(0, 0, 0, 0.39);
-}
-main {
-  display: flex;
-  float: left;
-}
-#titulo {
-  color: white;
-  margin: 1vh auto 1vh;
-  font-size: calc(0.2em + 5vw);
-}
-/* ---------- Billetera ------------- */
-#saldo {
-  display: flex;
-  float: left;
-  flex-wrap: wrap;
-  color: white;
-  background: rgba(0, 0, 0, 0.39);
-  width: 40vw;
-  height: 10vh;
-  margin: 0px auto 10px;
-}
-#saldo p {
-  width: 40%;
-  padding: 4px 1px;
+  grid-column: 1/5;
+  grid-row: 2/3;
+  font-size: calc(0.8rem + 3vw);
+  padding: 6px 0px;
   margin: 0 auto;
-  font-size: calc(0.2em + 3vw);
+  text-shadow: 1px 1px 2px black;
+}
+
+/* ---------- Billetera ------------- */
+.saldo {
+  display: grid;
+  width: 90%;
+  margin: 0px auto;
+  justify-content: stretch;
+  align-items: center;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, 50%);
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+.saldo p {
+  padding: 2px;
+  margin: 0 auto;
+  font-size: calc(0.3em + 2vw);
   font-weight: bolder;
 }
-#billetera {
-  width: 30%;
-}
-#resultado {
-  width: 40vw;
-  height: 10vh;
-  display: flex;
-  flex-wrap: wrap;
-  float: right;
+
+.resultado {
+  display: grid;
+  width: 90%;
+  margin: 0px auto;
+  grid-template-columns: repeat(4, auto);
+  grid-row: 50% 50%;
+  grid-template-areas:
+    "r sum1 signo sum2"
+    "paridad paridad paridad paridad";
   align-items: center;
-  justify-content: space-evenly;
-  right: 10px;
-  color: white;
-  background: rgba(0, 0, 0, 0.39);
-  margin: 0px auto 10px;
+  justify-content: stretch;
+  grid-column: 3/5;
+  grid-row: 1/2;
 }
-#suma_total {
-  display: block;
+.res {
+  grid-area: "r";
 }
-#resutado {
-  top: 10px;
+.suma1 {
+  grid-area: "sum1";
 }
-#sel {
-  width: 50%;
-  text-align: center;
+.signo {
+  grid-area: "signo";
 }
-#resultado p {
-  padding: 1px 5px;
+.sum2 {
+  grid-area: "sum2";
+}
+.sel {
+  grid-column: 1/5;
+  grid-area: "paridad";
+}
+.resultado p {
+  padding: 1px 5px 1px 1px;
   margin: 0 auto;
   font-size: calc(0.2em + 3vw);
   font-weight: bolder;
 }
 /* -------------- Nombre Presentacion --------------- */
-#section1 {
-  margin: 0px;
+
+.section1 {
+  width: 100vw;
+  justify-items: stretch;
+  display: grid;
+  grid-column: 1/5;
+  grid-row: 3/4;
+  column-gap: 2vw;
+  grid-template-columns: 54vw 44vw;
+  grid-template-rows: 32vh 18vh;
 }
-#form {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-#presentacion {
-  width: 40vw;
-  margin: 10px;
+.presentacion {
+  width: 50vw;
+  grid-column: 1/2;
+  margin: 5px auto;
   text-align: center;
-  height: 36vh;
-  background: rgba(0, 0, 0, 0.39);
 }
 
 .input {
   display: block;
-  width: 80%;
-  margin: 1vh auto;
-  border: 0.5px solid black;
-  border-radius: 10px;
-  height: 7vh;
+  width: 90%;
+  margin: 0.8vh auto;
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 4.5vh;
   text-align: center;
-  font-size: 4vh;
+  font-size: calc(0.5rem + 2vw);
 }
 .input::placeholder {
-  font-size: 3.2vw;
-}
-.button {
-  width: 45%;
-  height: auto;
-  color: white;
-  text-align: center;
-  padding: 8% 4%;
-  font-size: 70%;
-  font-weight: bold;
-  margin: 6px auto 4px;
-  background: #2724c5;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px 1px black;
-  pointer-events: auto;
-}
-.button:hover {
-  height: 7vh;
-}
-.button:active {
-  background: #ff3cac;
-  box-shadow: inset 1px 1px 5px 2px white;
-}
-#bienvenida,
-#mensajes,
-#despedida {
-  display: none;
-  color: white;
-  font-size: calc(0.2em + 3vw);
-  padding: 2px 4px;
-  margin: 2px auto 10px;
+  font-size: calc(0.5rem + 1vw);
 }
 .btn {
-  float: left;
   color: white;
-  padding: 1px;
-  font-size: 80%;
+  padding: 6px 1px;
+  font-size: calc(0.3rem + 2vw);
   font-weight: bold;
-  min-width: 41.672px;
-  max-width: 97.297px;
-  width: 35%;
-  height: 7vh;
+  width: 40%;
+  height: auto;
   margin: 1vh auto 0.2vh;
   background: #2724c5;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 1px 1px 2px 1px black;
 }
+.button {
+  width: 50%;
+  font-weight: bold;
+  margin: 2px auto;
+}
 
-#continuar {
+.bienvenida,
+.mensajes,
+.despedida {
+  display: none;
+  font-size: calc(0.3em + 3vw);
+  padding: 7px 4px;
+  margin: 2px auto 5px;
+}
+
+.continuar {
   display: none;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 95%;
   margin: 0px auto;
   padding: 0;
   font-size: 80%;
 }
-#continue {
+.continue {
   display: block;
   padding: 0px;
   margin: 0;
-  color: white;
   width: 100%;
 }
 .btn:hover {
-  box-shadow: inset 1px 1px 4px 2px white;
+  transform: scale(1.1);
 }
 .btn:active {
   background: #ff3cac;
 }
 /* -----------------Div Apuestas----------------------- */
 
-#apuestas {
-  width: 40vw;
-  margin: 10px 10px;
-  height: 28vh;
-  background: rgba(0, 0, 0, 0.39);
+.apuestas {
+  display: flex;
+  width: 50vw;
+  padding: 5px 3px 10px;
+  margin: 3px auto;
+  height: fit-content;
   text-align: center;
 }
-.input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+
 /* --------------- Section 2 --------------- */
-#section2 {
-  float: right;
-  width: 10vw;
-  margin: 4vw;
-}
-#cuerpo {
-  display: flex;
-  float: left;
-  flex-wrap: wrap;
-  width: 35vw;
-  justify-content: space-evenly;
+.container {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/3;
+  width: 40vw;
+  height: fit-content;
+  grid-template-areas:
+    "dado1"
+    "dado2";
+  margin: 10px auto;
+  align-items: flex-start;
+  justify-content: center;
 }
 .cont_dados {
-  width: 15vw;
-  height: 15vw;
-  margin: 1vw;
+  margin: 10px 0px;
+  width: 25vw;
+  height: 25vw;
   background-color: rgb(211, 211, 211);
-  min-width: 100px;
-  min-height: 100px;
 }
 /* ---------------- Dados -------------- */
+.dado1 {
+  grid-area: "dado1";
+}
+.dado2 {
+  grid-area: "dado2";
+}
 .dado1,
 .dado2 {
   display: grid;
   grid-template-columns: repeat(3, 30%);
   grid-template-rows: repeat(3, 30%);
-  position: relative;
   width: 100%;
   height: 100%;
 }
-#cara1,
-#seca1 {
+.cara1,
+.cara2 {
   display: grid;
   align-content: center;
   justify-content: center;
@@ -271,33 +265,62 @@ main {
   grid-row: 3;
   grid-column: 2;
 }
-#refresh {
+.refresh {
+  grid-column: 4/5;
+  grid-row: 4/5;
   display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: fit-content;
   padding: 0;
   margin: 0;
-  flex-direction: column;
-  background: rgba(54, 54, 54, 0.603);
-  position: fixed;
-  right: 10px;
-  bottom: 7vh;
-  width: 20vw;
-  color: white;
-  height: auto;
 }
-#refresh p {
+.refresh p {
   padding: 3px;
   text-align: center;
   margin: 3px auto;
   width: 80%;
 }
-#refresh img {
+.refresh img {
   padding: 0;
   margin: 0px auto;
   width: 80%;
 }
+/* -----Tabla de resultados recientes-------*/
+
+.ultimos_resultados {
+  grid-column: 1/4;
+  grid-row: 4/5;
+  width: 72vw;
+  display: flex;
+  margin: 10px 5px;
+  min-height: 60px;
+  justify-content: space-evenly;
+}
+.tabla {
+  margin: 4px 2px;
+}
+.titulos {
+  width: 72vw;
+}
+.titulo_tabla:first-child {
+  width: 8vw;
+}
+.titulo_tabla {
+  width: 20vw;
+  font-size: calc(0.3rem + 2vw);
+  text-align: center;
+  padding: 2px 5px;
+  background: #505050;
+  border: 1px solid black;
+}
+.titulo_tabla:nth-child(2n) {
+  background: #6b6b6b;
+}
+/* --------- Footer ---------- */
 footer {
   width: 100vw;
-  height: 5vh;
+  height: fit-content;
   background: rgb(44, 41, 41);
   color: white;
   font-size: 0.5em;
@@ -313,15 +336,12 @@ footer {
 footer a:visited {
   color: white;
 }
-footer p {
-  padding: 0;
-  margin: 10px;
-}
-#git {
+
+.git {
   display: flex;
   align-items: center;
 }
-#git img {
+.git img {
   background: white;
   border-radius: 50%;
   margin: 3px;
