@@ -15,7 +15,7 @@ body {
   grid-template-columns: 24vw 24vw 24vw 24vw;
   grid-template-rows: 7vh 7vh 50vh 20vh;
   justify-items: stretch;
-  row-gap: 9px;
+  row-gap: 5px;
   column-gap: 1.33vw;
   margin: 5px 0px;
   grid-auto-flow: row;
@@ -38,7 +38,29 @@ header {
   margin: 0 auto;
   text-shadow: 1px 1px 2px black;
 }
+.rows {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  text-align: center;
+  background: #272727;
+}
+.rows td {
+  padding: 2px 0px;
+  border-bottom: 1px solid black;
+}
 
+.rows td:nth-child(2n) {
+  background: #5c5c5c;
+}
+.perdio {
+  color: red;
+}
+.gano {
+  color: green;
+}
 /* ---------- Billetera ------------- */
 .saldo {
   display: grid;
@@ -250,6 +272,7 @@ header {
   grid-column: 3;
 }
 .circulo4 {
+  display: none;
   grid-row: 2;
   grid-column: 2;
 }
@@ -293,12 +316,13 @@ header {
   grid-row: 4/5;
   width: 72vw;
   display: flex;
-  margin: 10px 5px;
+  margin: 2px 5px;
   min-height: 60px;
   justify-content: space-evenly;
 }
 .tabla {
   margin: 4px 2px;
+  height: fit-content;
 }
 .titulos {
   width: 72vw;
@@ -310,18 +334,16 @@ header {
   width: 20vw;
   font-size: calc(0.3rem + 2vw);
   text-align: center;
-  padding: 2px 5px;
-  background: #505050;
+  padding: 5px 5px;
+  background: #201f7c;
   border: 1px solid black;
 }
-.titulo_tabla:nth-child(2n) {
-  background: #6b6b6b;
-}
+
 /* --------- Footer ---------- */
 footer {
   width: 100vw;
   height: fit-content;
-  background: rgb(44, 41, 41);
+  background: #2c2929;
   color: white;
   font-size: 0.5em;
   display: flex;

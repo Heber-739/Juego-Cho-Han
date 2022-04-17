@@ -19,79 +19,73 @@
     />
   </head>
   <body>
-    <div id="saldo" class="box saldo">
+    <div class="box saldo">
       <p>Saldo:</p>
-      <p id="billetera" class="billetera"></p>
+      <p class="billetera"></p>
       <p>Apuesta:</p>
-      <p id="apostando" class="apostando"></p>
+      <p class="apostando"></p>
     </div>
-    <div id="resultado" class="box resultado">
+    <div class="box resultado">
       <p class="res">Resultado:</p>
-      <p id="suma" class="suma1"></p>
+      <p class="suma1 suma"></p>
       <p class="signo">+</p>
-      <p id="resta" class="suma2"></p>
-      <p id="sel" class="sel"></p>
+      <p class="suma2 suma"></p>
+      <p class="sel"></p>
     </div>
     <header class="box">
-      <h1 id="titulo">Comienza el Juego</h1>
+      <h1>Comienza el Juego</h1>
     </header>
     <main>
-      <section id="section1" class="section1">
-        <div id="presentacion" class="presentacion box">
-          <form id="form" class="form" onsubmit="return false">
+      <section class="section1">
+        <div class="presentacion box">
+          <form class="form form_nombre" onsubmit="return false">
             <input
               type="text"
-              id="nombre"
               placeholder="¿Cuál es tu nombre?"
-              class="input"
+              class="input nombre"
               autocomplete="off"
               autofocus
             />
             <input
               type="number"
-              id="shibas"
               placeholder="Shibas a apostar"
-              class="input"
+              class="input shibas"
               min="1"
               autocomplete="off"
             />
-            <button id="button" class="button btn" onclick="cargar_datos()">
-              Start!
-            </button>
+            <button class="button btn">Start!</button>
           </form>
-          <p id="bienvenida" class="bienvenida"></p>
-          <p id="mensajes" class="mensajes"></p>
-          <div id="continuar" class="continuar">
-            <p id="continue" class="continue">¿Desea continuar?</p>
-            <div id="si_cont" class="btn" onclick="continuar('si')">
+          <p class="bienvenida"></p>
+          <p class="mensajes"></p>
+          <div class="continuar">
+            <p class="continue">¿Desea continuar?</p>
+            <div class="btn si_cont">
               <p>Si</p>
             </div>
-            <div id="no_cont" class="btn" onclick="continuar('no')">
+            <div class="btn no_cont">
               <p>No</p>
             </div>
           </div>
-          <p id="despedida" class="despedida"></p>
+          <p class="despedida"></p>
         </div>
-        <div id="apuestas" class="apuestas box">
+        <div class="apuestas box">
           <form onsubmit="return false">
             <input
               type="number"
               placeholder="¿Cuánto apostará?"
-              id="apuesta"
-              class="input"
+              class="input apuesta"
               autocomplete="off"
+              disabled
             />
-            <button id="par" class="btn" onclick="evaluar('par')">Par</button>
-            <button id="impar" class="btn" onclick="evaluar('impar')">
-              Impar
-            </button>
+            <button class="btn par">Par</button>
+            <button class="btn impar">Impar</button>
           </form>
         </div>
 
-        <div id="cuerpo" class="container">
+        <div class="container">
           <div class="cont_dados box">
             <!-- -------------Dado1--------------- -->
-            <div id="cara1" class="dado1 cara1">
+            <div class="dado1 cara1">
               <div id="valor1_1" class="cir1 circulo1"></div>
               <div id="valor2_1" class="cir1 circulo2"></div>
               <div id="valor3_1" class="cir1 circulo3"></div>
@@ -104,7 +98,7 @@
             <!-- -------------Dado2--------------- -->
           </div>
           <div class="cont_dados box">
-            <div id="seca1" class="dado2 cara2">
+            <div class="dado2 cara2">
               <div id="valor1_2" class="cir2 circulo1"></div>
               <div id="valor2_2" class="cir2 circulo2"></div>
               <div id="valor3_2" class="cir2 circulo3"></div>
@@ -130,9 +124,9 @@
         </table>
       </div>
     </main>
-    <div id="refresh" class="btn refresh">
+    <div class="btn refresh">
       <p>Refresh<br />Game</p>
-      <img src="./img/refresh.png" alt="refresh" onclick="location.reload()" />
+      <img src="./img/refresh.png" alt="refresh"" />
     </div>
     <footer>
       <p>
@@ -147,8 +141,6 @@
         >
       </p>
     </footer>
-    <script src="./javascript/principal.js"></script>
-    <script src="./javascript/dados.js"></script>
-    <script src="./javascript/juegos_jugados.js"></script>
+    <script type="module" src="./javascript/principal.js"></script>
   </body>
 </html>
