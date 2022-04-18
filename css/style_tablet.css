@@ -1,325 +1,107 @@
-html {
-  background-image: linear-gradient(
-    225deg,
-    #ff3cac 0%,
-    #784ba0 50%,
-    #2b86c5 100%
-  );
-  background-repeat: no-repeat;
-  height: 100vh;
+body {
+  margin: 10px 0px;
+  row-gap: 25px;
 }
-.box {
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px 1px black;
-}
+
 header {
-  display: flex;
-  width: 65vw;
-  max-width: 350px;
-  height: auto;
-  padding: 1vh;
-  margin: 10px auto;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.39);
+  font-size: calc(1.5rem + 3vw);
+  max-width: 550px;
+  padding: 20px 0;
 }
-main {
-  display: flex;
-  float: left;
+.rows {
+  font-size: 1rem;
 }
-#titulo {
-  color: white;
-  margin: 1vh auto 1vh;
-  font-size: calc(0.4em + 3vw);
+.rows td {
+  padding: 5px 0px;
+  border-bottom: 1px solid black;
 }
+
 /* ---------- Billetera ------------- */
-#saldo {
-  display: flex;
-  float: left;
-  flex-wrap: wrap;
-  color: white;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.39);
-  width: 40vw;
-  height: 7vh;
-  margin: 0px auto 10px;
+
+.saldo p {
+  font-size: calc(0.6em + 2vw);
 }
-#saldo p {
-  padding: 4px 3px;
-  margin: 0 auto;
-  font-size: calc(0.4em + 2vw);
-  font-weight: bolder;
-}
-#resultado {
-  width: 44vw;
-  height: 7vh;
-  display: flex;
-  flex-wrap: wrap;
-  float: right;
-  align-items: center;
-  justify-content: space-evenly;
-  right: 10px;
-  color: white;
-  background: rgba(0, 0, 0, 0.39);
-  margin: 0px auto 10px;
-}
-#resultado p {
+
+.resultado p {
+  font-size: calc(0.6em + 2vw);
   padding: 1px 5px;
-  margin: 0 auto;
-  font-size: calc(0.4em + 2vw);
-  font-weight: bolder;
-}
-#suma_total {
-  display: block;
-}
-#resutado {
-  top: 10px;
-}
-#sel {
-  text-align: center;
 }
 
 /* -------------- Nombre Presentacion --------------- */
-#section1 {
-  margin: 0px;
+.presentacion {
+  font-size: 2.5rem;
 }
-#form {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
+.presentacion p {
+  padding: 12px 0px;
 }
-#presentacion {
-  width: 40vw;
-  margin: 10px;
-  text-align: center;
-  height: 36vh;
-  background: rgba(0, 0, 0, 0.39);
-}
-
 .input {
-  display: block;
-  width: 80%;
-  margin: 1vh auto;
+  margin: 2vh auto;
   border: 0.5px solid black;
   border-radius: 10px;
-  height: 7vh;
-  text-align: center;
-  font-size: 4vh;
+  font-size: calc(0.8rem + 2vw);
+  width: 80%;
 }
 .input::placeholder {
-  font-size: 3.2vw;
-}
-.button {
-  width: 30%;
-  height: auto;
-  color: white;
-  text-align: center;
-  padding: 8% 4%;
-  font-size: 70%;
-  font-weight: bold;
-  margin: 6px 10px 4px;
-  background: #2724c5;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px 1px black;
-  pointer-events: auto;
-}
-.button:hover {
-  height: 7vh;
-}
-.button:active {
-  background: #ff3cac;
-  box-shadow: inset 1px 1px 5px 2px white;
-}
-#bienvenida,
-#mensajes,
-#despedida {
-  display: none;
-  color: white;
-  font-size: calc(0.2em + 3vw);
-  padding: 2px 4px;
-  margin: 2px auto 10px;
+  font-size: calc(0.7rem + 2vw);
 }
 .btn {
-  float: left;
-  color: white;
-  padding: 1px;
-  font-size: 80%;
-  font-weight: bold;
-  min-width: 41.672px;
-  max-width: 97.297px;
-  width: 35%;
-  height: 7vh;
-  margin: 1vh auto 0.2vh;
-  background: #2724c5;
-  border: 1px solid black;
   border-radius: 10px;
-  box-shadow: 1px 1px 2px 1px black;
+  padding: 10px 5px;
+  font-size: calc(0.5rem + 2vw);
+  margin: 10px auto 5px;
+}
+.button {
+  border-radius: 10px;
+  margin: 6px auto 4px;
 }
 
-#continuar {
-  display: none;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.continuar {
   width: 75%;
-  margin: 0px auto;
-  padding: 0;
-  font-size: 80%;
-}
-#continue {
-  display: block;
-  padding: 0px;
-  margin: 0;
-  color: white;
-  width: 100%;
-}
-.btn:hover {
-  box-shadow: inset 1px 1px 4px 2px white;
-}
-.btn:active {
-  background: #ff3cac;
 }
 /* -----------------Div Apuestas----------------------- */
 
-#apuestas {
-  width: 40vw;
-  margin: 10px 10px;
-  height: 28vh;
-  background: rgba(0, 0, 0, 0.39);
-  text-align: center;
+.apuestas {
+  margin: 10px auto;
 }
-.input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+
 /* --------------- Section 2 --------------- */
-#section2 {
-  float: right;
-  width: 10vw;
-  margin: 4vw;
-}
-#cuerpo {
-  display: flex;
-  float: left;
-  flex-wrap: wrap;
-  width: 35vw;
-  justify-content: space-evenly;
-}
+
 .cont_dados {
-  width: 15vw;
-  height: 15vw;
   margin: 1vw;
-  background-color: rgb(211, 211, 211);
-  min-width: 100px;
-  min-height: 100px;
 }
 /* ---------------- Dados -------------- */
-.dado1,
-.dado2 {
-  display: grid;
-  grid-template-columns: repeat(3, 30%);
-  grid-template-rows: repeat(3, 30%);
-  position: relative;
-  width: 100%;
-  height: 100%;
+.dado1 {
+  grid-area: "dado1";
 }
-#cara1,
-#seca1 {
-  display: grid;
-  align-content: center;
-  justify-content: center;
+.dado2 {
+  grid-area: "dado2";
 }
 
 /* ---------------- Circulos -------------- */
-.cir1,
-.cir2 {
-  background: black;
-  border-radius: 50%;
-  width: 80%;
-  height: 80%;
-  margin: auto;
+
+.refresh {
+  width: 15vw;
 }
-.circulo1 {
-  grid-row: 1;
-  grid-column: 1;
+/* -----Tabla de resultados recientes-------*/
+
+.ultimos_resultados {
+  margin: 20px 10px;
+  min-height: 100px;
 }
-.circulo2 {
-  grid-row: 1;
-  grid-column: 2;
+.tabla {
+  margin: 10px 7px;
 }
-.circulo3 {
-  grid-row: 1;
-  grid-column: 3;
+
+.titulo_tabla {
+  padding: 8px 5px;
 }
-.circulo4 {
-  grid-row: 2;
-  grid-column: 2;
-}
-.circulo5 {
-  grid-row: 3;
-  grid-column: 1;
-}
-.circulo6 {
-  grid-row: 3;
-  grid-column: 3;
-}
-.circulo7 {
-  grid-row: 3;
-  grid-column: 2;
-}
-#refresh {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  flex-direction: column;
-  background: rgba(54, 54, 54, 0.603);
-  position: fixed;
-  right: 10px;
-  bottom: 7vh;
-  width: 13vw;
-  color: white;
-  height: auto;
-}
-#refresh p {
-  padding: 3px;
-  text-align: center;
-  margin: 3px auto;
-  width: 80%;
-}
-#refresh img {
-  padding: 0;
-  margin: 0px auto;
-  width: 80%;
-}
+/* --------- Footer ---------- */
+
 footer {
-  width: 100vw;
-  height: 5vh;
-  background: rgb(44, 41, 41);
-  color: white;
-  font-size: 0.5em;
-  display: flex;
-  position: fixed;
-  justify-content: space-evenly;
-  left: 0;
-  bottom: 0px;
-  padding: 0;
-  margin: 0;
-  align-items: center;
+  font-size: 1em;
 }
-footer a:visited {
-  color: white;
-}
+
 footer p {
   padding: 0;
   margin: 10px;
-}
-#git {
-  display: flex;
-  align-items: center;
-}
-#git img {
-  background: white;
-  border-radius: 50%;
-  margin: 3px;
 }
