@@ -1,4 +1,5 @@
 var jugadas = 0;
+var altura = 0;
 export function agregar_registro(monto, billetera, resultado) {
   const datos_historial = {
     apuesta: monto,
@@ -26,6 +27,7 @@ function registro_juegos(registro) {
   let celda_resultado = document.createElement("td");
   let celda_saldo = document.createElement("td");
   let cuerpo = document.querySelector(".cuerpo_tabla");
+  let body = document.querySelector("body");
   celda_nro.textContent = jugadas;
   celda_apuesta.textContent = registro.apuesta;
   if (registro.gano == "Ganó") {
@@ -44,4 +46,7 @@ function registro_juegos(registro) {
   new_row.appendChild(celda_saldo);
   new_row.classList.add("rows");
   cuerpo.appendChild(new_row);
+  let alt = cuerpo.firstChild.clientHeight;
+  altura += alt;
+  body.style.marginBottom = `${altura}px`;
 }

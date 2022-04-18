@@ -16,7 +16,8 @@ body {
   grid-template-rows: 10vw 14vw 80vw auto;
   height: 100vh;
   justify-items: stretch;
-  margin: 5px 0px;
+  margin: 5px 0px 0px;
+  margin-bottom: 0px;
   row-gap: 10px;
 }
 .box {
@@ -39,7 +40,7 @@ header {
   width: fit-content;
 }
 .rows {
-  font-size: 0.8rem;
+  font-size: calc(0.3rem + 2.5vw);
   font-weight: bolder;
   text-align: center;
   background: #272727;
@@ -133,7 +134,7 @@ header {
   align-content: space-around;
   display: grid;
   flex-direction: column;
-  height: 80%;
+  height: fit-content;
 }
 
 .input {
@@ -183,7 +184,7 @@ header {
   font-size: calc(0.2rem + 3vw);
   justify-content: space-around;
   margin: 0px auto;
-  padding: 0;
+  padding: 0px 0px 5px;
   width: 95%;
 }
 .continue {
@@ -230,8 +231,8 @@ header {
   width: 25vw;
   height: 25vw;
   background-color: rgb(211, 211, 211);
-  max-height: 120px;
-  max-width: 120px;
+  max-height: 220px;
+  max-width: 220px;
 }
 /* ---------------- Dados -------------- */
 .dado1 {
@@ -300,13 +301,13 @@ header {
   grid-column: 4/5;
   grid-row: 4/5;
   height: fit-content;
-  margin: 5px auto;
-  width: 20vw;
+  margin: -10px auto 0px;
+  width: 17vw;
   max-width: 100px;
 }
 .refresh p {
-  font-size: 0.8rem;
-  margin: 5px auto 3px;
+  font-size: 0.7rem;
+  margin: 2px auto 1px;
   text-align: center;
   width: 90%;
 }
@@ -322,7 +323,7 @@ header {
   grid-column: 1/4;
   grid-row: 4/5;
   justify-content: space-evenly;
-  margin: 20px 5px;
+  margin: 20px 5px 50px;
   min-height: 60px;
   width: 72vw;
   overflow: hidden;
@@ -339,7 +340,7 @@ header {
 .titulo_tabla {
   background: #201f7c;
   border: 1px solid black;
-  font-size: 0.7rem;
+  font-size: calc(0.4rem + 2vw);
   font-weight: bold;
   padding: 7px 2px 5px;
   text-align: center;

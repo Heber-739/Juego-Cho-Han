@@ -1,9 +1,9 @@
 body {
-  margin: 10px 0px;
+  margin-bottom: 0px;
 }
 
 header {
-  padding: 20px 0;
+  padding: 20px 30px;
 }
 .rows {
   font-size: 1rem;
@@ -78,7 +78,7 @@ header {
 /* ---------------- Circulos -------------- */
 
 .refresh {
-  width: 15vw;
+  width: 20vw;
 }
 /* -----Tabla de resultados recientes-------*/
 
@@ -86,23 +86,17 @@ header {
   margin: 20px 10px;
   min-height: 100px;
 }
-.tabla {
-  margin: 10px 7px;
-}
 
 .titulo_tabla {
+  font-size: calc(0.7rem + 1vw);
   padding: 8px 5px;
 }
 /* --------- Footer ---------- */
 
 footer {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
-footer p {
-  padding: 0;
-  margin: 10px;
-}
 @media screen and (min-width: 768px) and (orientation: landscape) {
   body {
     height: calc(100vh + 100vw);

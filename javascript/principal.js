@@ -1,5 +1,5 @@
-import { girarDados } from "./dados.js";
-import { agregar_registro, leer_registro } from "./registro.js";
+import { leer_registro } from "./registro.js";
+import { testCaracteres, evaluar_input } from "./evaluaciones.js";
 
 var input_nombre = document.querySelector(".nombre");
 var mensaje1 = document.querySelector(".bienvenida");
@@ -16,17 +16,19 @@ var refresh = document.querySelector(".refresh");
 
 var palabra = [];
 var billetera = 0;
-var partidas_ganadas = 0;
+
+leer_registro();
 
 input_nombre.addEventListener("keypress", function (event) {
-  var input_name = event.key;
-  testCaracteres(input_name);
+  let caracter = testCaracteres(event.key);
+  palabra.push(caracter);
 });
-leer_registro();
+
 refresh.addEventListener("click", () => {
   location.reload();
   localStorage.clear();
 });
+
 start.addEventListener("click", () => {
   let sipe = input_shibas.value;
   if (sipe >= 1) {
@@ -46,126 +48,18 @@ start.addEventListener("click", () => {
   }
 });
 
-function comenzar_apuestas() {
+export function comenzar_apuestas() {
   let ap = document.querySelector(".apostando");
-  let pari = document.querySelector(".sel");
+  document.querySelector(".sel").textContent = "";
   input_apuesta.disabled = false;
   input_apuesta.value = "";
   input_apuesta.addEventListener("keyup", function () {
-    pari.textContent = "";
-    let apuesta = input_apuesta.value;
-    if (apuesta > billetera) {
-      input_apuesta.style.color = "red";
-      par.onclick = "";
-      impar.onclick = "";
-    } else if (apuesta <= billetera) {
-      mensaje3.style.display = "none";
-      input_apuesta.style.color = "black";
-      par.onclick = () => {
-        evaluar("par", apuesta);
-      };
-      impar.onclick = () => {
-        evaluar("impar", apuesta);
-      };
-      if (apuesta > 0) {
-        ap.textContent = `$${apuesta}`;
-        mensaje3.style.display = "none";
-      } else {
-        ap.textContent = `$${0}`;
-        mensaje3.style.display = "block";
-        mensaje3.textContent = "Apuesta mínima: 1";
-      }
-    }
+    ap.textContent = "";
+    par.onclick = () => {
+      evaluar_input("par", billetera);
+    };
+    impar.onclick = () => {
+      evaluar_input("impar", billetera);
+    };
   });
-}
-
-function testCaracteres(letra) {
-  var caracteres = /\W/g;
-  if (caracteres.test(letra)) {
-    mensaje3.style.display = "block";
-    input_shibas.style.display = "none";
-    mensaje3.textContent = "No se permiten caracteres especiales";
-  } else {
-    mensaje3.style.display = "none";
-    palabra.push(letra);
-    input_shibas.style.display = "block";
-  }
-}
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function evaluar(paridad, apuesta) {
-  let time = girarDados();
-  let pari = document.querySelector(".sel");
-  let resultado = "Ganó";
-  sleep(210 * time).then(() => {
-    let sumando1 = document.querySelector(".suma1");
-    let sumando2 = document.querySelector(".suma2");
-    let total = parseInt(sumando1.textContent) + parseInt(sumando2.textContent);
-    if (paridad == "par" && total % 2 == 0) {
-      mensaje1.style.color = "#74fd3e";
-      mensaje1.textContent = "Felicidades, Usted ganó!";
-      billetera += parseInt(apuesta);
-      mensaje2.textContent = "Saldo actual: $" + billetera;
-      saldo.textContent = "$" + billetera;
-      partidas_ganadas += 1;
-      desea_continuar();
-      input_apuesta.disabled = true;
-      pari.textContent = "par".toUpperCase();
-    } else if (paridad == "impar" && total % 2 != 0) {
-      mensaje1.style.color = "#74fd3e";
-      mensaje1.textContent = "Felicidades, Usted ganó!";
-      billetera += parseInt(apuesta);
-      mensaje2.textContent = "Saldo actual: $" + billetera;
-      saldo.textContent = "$" + billetera;
-      partidas_ganadas += 1;
-      desea_continuar();
-      input_apuesta.disabled = true;
-      pari.textContent = "impar".toUpperCase();
-    } else {
-      resultado = "Perdió";
-      if (total % 2 != 0) {
-        pari.textContent = "impar".toUpperCase();
-      } else {
-        pari.textContent = "par".toUpperCase();
-      }
-      mensaje1.style.color = "#fd2600";
-      mensaje1.textContent = "Usted perdió!";
-      billetera -= parseInt(apuesta);
-      mensaje2.textContent = "Saldo actual: $" + billetera;
-      saldo.textContent = "$" + billetera;
-      if (billetera == 0) {
-        despedirse();
-      } else {
-        desea_continuar();
-        input_apuesta.disabled = true;
-      }
-    }
-    agregar_registro(apuesta, billetera, resultado);
-  });
-}
-function desea_continuar() {
-  let sipi = document.querySelector(".si_cont");
-  let nope = document.querySelector(".no_cont");
-  let cont = document.querySelector(".continuar");
-  par.onclick = "";
-  impar.onclick = "";
-  cont.style.display = "flex";
-  sipi.addEventListener("click", () => {
-    cont.style.display = "none";
-    comenzar_apuestas();
-  });
-  nope.addEventListener("click", () => {
-    cont.style.display = "none";
-    despedirse();
-  });
-}
-function despedirse() {
-  par.onclick = "";
-  impar.onclick = "";
-  mensaje1.style.color = "white";
-  mensaje1.textContent = "Muchas gracias por jugar!";
-  input_apuesta.disabled = true;
-  mensaje2.textContent = `Usted gano ${partidas_ganadas} partidas`;
 }
