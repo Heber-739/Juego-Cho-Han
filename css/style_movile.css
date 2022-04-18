@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,400;1,700&display=swap");
 body {
   background-image: linear-gradient(
     225deg,
@@ -9,13 +10,14 @@ body {
   color: white;
   column-gap: 1.33vw;
   display: grid;
+  font-family: "Asap", sans-serif;
   grid-auto-flow: row;
   grid-template-columns: 24vw 24vw 24vw 24vw;
-  grid-template-rows: 7vh 7vh 50vh 20vh;
+  grid-template-rows: 10vw 14vw 80vw auto;
   height: 100vh;
   justify-items: stretch;
   margin: 5px 0px;
-  row-gap: 5px;
+  row-gap: 10px;
 }
 .box {
   border: 1px solid black;
@@ -26,15 +28,15 @@ body {
 
 header {
   align-self: center;
-  font-size: calc(0.8rem + 3vw);
+  font-size: calc(1.2rem + 5vw);
+  font-weight: bold;
   grid-column: 1/5;
   grid-row: 2/3;
-  margin: 0 auto;
-  max-width: 350px;
-  padding: 6px 0px;
+  margin: 5px auto;
+  padding: 6px 7px;
   text-align: center;
   text-shadow: 1px 1px 2px black;
-  width: 80%;
+  width: fit-content;
 }
 .rows {
   font-size: 0.8rem;
@@ -68,8 +70,9 @@ header {
   margin: 0px auto;
   width: 90%;
 }
-.saldo p {
-  font-size: calc(0.3em + 2vw);
+.saldo p,
+.resultado p {
+  font-size: calc(0.5em + 1vw);
   font-weight: bolder;
   margin: 0 auto;
   padding: 2px;
@@ -105,12 +108,7 @@ header {
   grid-column: 1/5;
   grid-area: "paridad";
 }
-.resultado p {
-  font-size: calc(0.2em + 3vw);
-  font-weight: bolder;
-  margin: 0 auto;
-  padding: 1px 5px 1px 1px;
-}
+
 /* -------------- Nombre Presentacion --------------- */
 
 .section1 {
@@ -118,32 +116,41 @@ header {
   display: grid;
   grid-column: 1/5;
   grid-row: 3/4;
-  grid-template-columns: 54vw 44vw;
-  grid-template-rows: 32vh 18vh;
-  justify-items: stretch;
+  grid-template-columns: 60vw 40vw;
+  grid-template-rows: 55vw 25vw;
   width: 100vw;
 }
 .presentacion {
+  display: grid;
+  align-content: stretch;
   grid-column: 1/2;
-  margin: 5px auto;
+  margin: 0px auto;
   text-align: center;
-  width: 50vw;
+  width: 80%;
+  height: 53vw;
+}
+.form_nombre {
+  align-content: space-around;
+  display: grid;
+  flex-direction: column;
+  height: 80%;
 }
 
 .input {
   border: 1px solid black;
   border-radius: 4px;
   display: block;
-  font-size: calc(0.5rem + 2vw);
-  height: calc(8px + 6vw);
+  font-size: calc(0.1rem + 3vw);
+  height: calc(4px + 9vw);
   margin: 6px auto;
   text-align: center;
-  width: 90%;
+  width: 80%;
 }
 .input::placeholder {
   font-size: calc(0.5rem + 1vw);
 }
 .btn {
+  align-self: center;
   background: #2724c5;
   border: 1px solid black;
   border-radius: 5px;
@@ -151,8 +158,8 @@ header {
   color: white;
   font-size: calc(0.3rem + 2vw);
   font-weight: bold;
-  margin: 8px auto 3px;
-  padding: 6px 1px;
+  margin: 0px auto;
+  padding: 8px 0px;
   width: 40%;
 }
 .button {
@@ -165,15 +172,15 @@ header {
 .mensajes,
 .despedida {
   display: none;
-  font-size: calc(0.3em + 3vw);
-  padding: 7px 4px;
+  font-size: calc(0.2rem + 4vw);
+  padding: 5px 2px;
   margin: 2px auto 5px;
 }
 
 .continuar {
   display: none;
   flex-wrap: wrap;
-  font-size: 80%;
+  font-size: calc(0.2rem + 3vw);
   justify-content: space-around;
   margin: 0px auto;
   padding: 0;
@@ -195,11 +202,12 @@ header {
 
 .apuestas {
   display: flex;
-  height: fit-content;
+  height: 23vw;
+  justify-content: center;
   margin: 3px auto;
   padding: 5px 3px 10px;
   text-align: center;
-  width: 50vw;
+  width: 80%;
 }
 
 /* --------------- Section 2 --------------- */
@@ -215,13 +223,15 @@ header {
   height: fit-content;
   justify-content: center;
   margin: 10px auto;
-  width: 40vw;
+  width: 30vw;
 }
 .cont_dados {
   margin: 10px 0px;
   width: 25vw;
   height: 25vw;
   background-color: rgb(211, 211, 211);
+  max-height: 120px;
+  max-width: 120px;
 }
 /* ---------------- Dados -------------- */
 .dado1 {
@@ -284,19 +294,21 @@ header {
   grid-column: 2;
 }
 .refresh {
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   grid-column: 4/5;
   grid-row: 4/5;
   height: fit-content;
-  margin: 15px auto;
+  margin: 5px auto;
   width: 20vw;
+  max-width: 100px;
 }
 .refresh p {
-  padding: 3px;
+  font-size: 0.8rem;
+  margin: 5px auto 3px;
   text-align: center;
-  margin: 3px auto;
-  width: 80%;
+  width: 90%;
 }
 .refresh img {
   padding: 0;
@@ -313,22 +325,23 @@ header {
   margin: 20px 5px;
   min-height: 60px;
   width: 72vw;
+  overflow: hidden;
+  background: none;
 }
 .tabla {
-  height: fit-content;
-  margin: 2px 2px;
+  margin: -2px auto 0px;
 }
+
 .titulos {
   width: 72vw;
 }
-.titulo_tabla:first-child {
-  width: 8vw;
-}
+
 .titulo_tabla {
   background: #201f7c;
   border: 1px solid black;
-  font-size: calc(0.2rem + 2vw);
-  padding: 5px 5px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 7px 2px 5px;
   text-align: center;
   width: 20vw;
 }
@@ -354,8 +367,16 @@ footer a:visited {
   display: flex;
   align-items: center;
 }
+.git a:link {
+  color: white;
+}
 .git img {
   background: white;
   border-radius: 50%;
   margin: 3px;
+}
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  body {
+    height: calc(100vh + 100vw);
+  }
 }

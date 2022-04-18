@@ -1,11 +1,8 @@
 body {
   margin: 10px 0px;
-  row-gap: 25px;
 }
 
 header {
-  font-size: calc(1.5rem + 3vw);
-  max-width: 550px;
   padding: 20px 0;
 }
 .rows {
@@ -53,6 +50,7 @@ header {
 .button {
   border-radius: 10px;
   margin: 6px auto 4px;
+  padding: 25px 5px;
 }
 
 .continuar {
@@ -104,4 +102,9 @@ footer {
 footer p {
   padding: 0;
   margin: 10px;
+}
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  body {
+    height: calc(100vh + 100vw);
+  }
 }
