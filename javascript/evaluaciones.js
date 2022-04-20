@@ -11,7 +11,6 @@ var par = document.querySelector(".par");
 var impar = document.querySelector(".impar");
 
 var partidas_ganadas = 0;
-
 export function testCaracteres(letra) {
   var caracteres = /\W/g;
   if (caracteres.test(letra)) {

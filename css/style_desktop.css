@@ -1,0 +1,191 @@
+body {
+  column-gap: 1.5vw;
+  grid-template-columns: 23vw 50vw 23vw;
+  grid-template-rows: 8vw auto;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+main {
+  display: grid;
+  column-gap: 0.75vw;
+  grid-column: 1/4;
+  grid-row: 2/3;
+  grid-template-columns: 20vw 19vw 19vw 19vw 20vw;
+  grid-template-rows: auto;
+  width: 100vw;
+}
+
+header {
+  font-size: calc(1.5rem + 2vw);
+  grid-column: 2/3;
+  grid-row: 1/2;
+  margin: 0 auto;
+  padding: 10px 10px;
+  width: 40vw;
+}
+.rows {
+  font-size: 1rem;
+  height: 10px;
+}
+.rows td {
+  padding: 5px 0px;
+}
+
+/* ---------- Billetera ------------- */
+.saldo {
+  grid-column: 1/2;
+  width: 20vw;
+}
+.saldo p,
+.resultado p {
+  font-size: calc(0.7rem + 1vw);
+}
+.resultado {
+  width: 20vw;
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+/* -------------- Nombre Presentacion --------------- */
+.section1 {
+  grid-column: 3/5;
+  grid-row: 1;
+  grid-template-columns: 33vw 21vw;
+  grid-template-rows: 42vh 25vh;
+  margin: 0px;
+  width: 33vw;
+}
+
+.presentacion {
+  grid-row: 1/2;
+  width: 80%;
+  text-align: center;
+  height: 41vh;
+}
+
+.input {
+  font-size: calc(0.1rem + 2vw);
+  height: 50px;
+  margin: 7px auto;
+}
+
+.btn {
+  font-size: calc(0.3rem + 1.5vw);
+  padding: 10px 0px;
+  width: 35%;
+}
+.button {
+  font-size: calc(0.4rem + 1.5vw);
+  width: 50%;
+}
+
+.bienvenida,
+.mensajes,
+.despedida {
+  font-size: calc(0.9em + 1vw);
+}
+
+.continuar {
+  font-size: calc(0.4em + 2vw);
+}
+
+/* -----------------Div Apuestas----------------------- */
+
+.apuestas {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  height: 22vh;
+  padding: 0;
+}
+
+/* --------------- Section 2 --------------- */
+.container {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  margin: 0px auto;
+  width: 16vw;
+}
+
+.cont_dados {
+  width: 13vw;
+  height: 13vw;
+}
+/* ---------------- Dados -------------- */
+.dado1,
+.dado2 {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(3, 30%);
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/* -----Tabla de resultados recientes-------*/
+
+.ultimos_resultados {
+  grid-column: 1/3;
+  grid-row: 1;
+  margin: 0px auto;
+  width: 32vw;
+  height: fit-content;
+}
+.tabla {
+  margin: -2px auto 0px;
+}
+
+.titulo_tabla {
+  font-size: calc(0.4rem + 1vw);
+  padding: 7px 2px 5px;
+}
+
+/* ---------------- Refresh -------------- */
+
+.refresh {
+  position: fixed;
+  bottom: 6vh;
+  right: 20px;
+  width: 5vw;
+  cursor: pointer;
+}
+.refresh_texto {
+  display: none;
+  font-size: calc(0.2rem + 1vw);
+}
+.refresh:hover {
+  transform: none;
+}
+.refresh:hover .refresh_texto {
+  display: block;
+}
+
+footer {
+  width: 100vw;
+  height: 5vh;
+  background: rgb(44, 41, 41);
+  color: white;
+  font-size: calc(0.3em + 0.8vw);
+  display: flex;
+  position: fixed;
+  justify-content: space-evenly;
+  left: 0;
+  bottom: 0px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+footer a:visited {
+  color: white;
+}
+footer p {
+  padding: 0;
+  margin: 10px;
+}
+#git {
+  display: flex;
+  align-items: center;
+}
+#git img {
+  background: white;
+  border-radius: 50%;
+  margin: 3px;
+}

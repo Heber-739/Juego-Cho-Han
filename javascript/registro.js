@@ -1,5 +1,6 @@
 var jugadas = 0;
 var altura = 0;
+
 export function agregar_registro(monto, billetera, resultado) {
   const datos_historial = {
     apuesta: monto,
@@ -27,7 +28,7 @@ function registro_juegos(registro) {
   let celda_resultado = document.createElement("td");
   let celda_saldo = document.createElement("td");
   let cuerpo = document.querySelector(".cuerpo_tabla");
-  let body = document.querySelector("body");
+
   celda_nro.textContent = jugadas;
   celda_apuesta.textContent = registro.apuesta;
   if (registro.gano == "Ganó") {
@@ -48,5 +49,17 @@ function registro_juegos(registro) {
   cuerpo.appendChild(new_row);
   let alt = cuerpo.firstChild.clientHeight;
   altura += alt;
-  body.style.marginBottom = `${altura}px`;
+  redimencionar();
+}
+
+export function redimencionar() {
+  let body = document.querySelector("body");
+  window.addEventListener("resize", function (event) {
+    if (screen.width >= 1024) {
+      body.style.height = "fit-content";
+      body.style.marginBottom = "40px";
+    } else if (screen.width < 1024) {
+      body.style.marginBottom = `${altura}px`;
+    }
+  });
 }

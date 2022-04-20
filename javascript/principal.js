@@ -1,4 +1,4 @@
-import { leer_registro } from "./registro.js";
+import { leer_registro, redimencionar } from "./registro.js";
 import { testCaracteres, evaluar_input } from "./evaluaciones.js";
 
 var input_nombre = document.querySelector(".nombre");
@@ -18,6 +18,7 @@ var palabra = [];
 var billetera = 0;
 
 leer_registro();
+window.addEventListener("resize", redimencionar());
 
 input_nombre.addEventListener("keypress", function (event) {
   let caracter = testCaracteres(event.key);

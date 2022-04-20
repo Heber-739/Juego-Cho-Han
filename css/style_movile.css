@@ -16,7 +16,7 @@ body {
   grid-template-rows: 10vw 14vw 80vw auto;
   height: 100vh;
   justify-items: stretch;
-  margin: 5px 0px 0px;
+  margin-top: 5px;
   margin-bottom: 0px;
   row-gap: 10px;
 }
@@ -39,20 +39,7 @@ header {
   text-shadow: 1px 1px 2px black;
   width: fit-content;
 }
-.rows {
-  font-size: calc(0.3rem + 2.5vw);
-  font-weight: bolder;
-  text-align: center;
-  background: #272727;
-}
-.rows td {
-  padding: 2px 0px;
-  border-bottom: 1px solid black;
-}
 
-.rows td:nth-child(2n) {
-  background: #5c5c5c;
-}
 .perdio {
   color: red;
 }
@@ -220,7 +207,6 @@ header {
   grid-template-areas:
     "dado1"
     "dado2";
-
   height: fit-content;
   justify-content: center;
   margin: 10px auto;
@@ -305,21 +291,20 @@ header {
   width: 17vw;
   max-width: 100px;
 }
-.refresh p {
+.refresh_texto {
   font-size: 0.7rem;
   margin: 2px auto 1px;
   text-align: center;
   width: 90%;
 }
-.refresh img {
+.refresh_imagen {
   padding: 0;
   margin: 0px auto;
-  width: 80%;
+  width: 100%;
 }
 /* -----Tabla de resultados recientes-------*/
 
 .ultimos_resultados {
-  display: flex;
   grid-column: 1/4;
   grid-row: 4/5;
   justify-content: space-evenly;
@@ -331,6 +316,10 @@ header {
 }
 .tabla {
   margin: -2px auto 0px;
+}
+.cuerpo_tabla {
+  transform: scaley(-1);
+  width: 32vw;
 }
 
 .titulos {
@@ -345,6 +334,22 @@ header {
   padding: 7px 2px 5px;
   text-align: center;
   width: 20vw;
+}
+.rows {
+  transform: scaley(-1);
+  font-size: calc(0.3rem + 2.5vw);
+  font-weight: bolder;
+  text-align: center;
+  background: #272727;
+  overflow: hidden;
+}
+.rows td {
+  padding: 2px 0px;
+  border-bottom: 1px solid black;
+}
+
+.rows td:nth-child(2n) {
+  background: #5c5c5c;
 }
 
 /* --------- Footer ---------- */
