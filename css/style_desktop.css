@@ -3,7 +3,8 @@ body {
   grid-template-columns: 23vw 50vw 23vw;
   grid-template-rows: 8vw auto;
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 30px;
+  height: 100vh;
 }
 main {
   display: grid;
@@ -95,7 +96,6 @@ header {
   grid-column: 1/2;
   grid-row: 2/3;
   height: 22vh;
-  padding: 0;
 }
 
 /* --------------- Section 2 --------------- */

@@ -18,7 +18,8 @@ var palabra = [];
 var billetera = 0;
 
 leer_registro();
-window.addEventListener("resize", redimencionar());
+redimencionar();
+window.addEventListener("resize", redimencionar);
 
 input_nombre.addEventListener("keypress", function (event) {
   let caracter = testCaracteres(event.key);
@@ -56,6 +57,11 @@ export function comenzar_apuestas() {
   input_apuesta.value = "";
   input_apuesta.addEventListener("keyup", function () {
     ap.textContent = "";
+    if (input_apuesta.value > billetera) {
+      input_apuesta.style.color = "red";
+    } else if (input_apuesta.value < billetera) {
+      input_apuesta.style.color = "black";
+    }
     par.onclick = () => {
       evaluar_input("par", billetera);
     };

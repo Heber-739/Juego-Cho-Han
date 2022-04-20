@@ -1,5 +1,4 @@
 var jugadas = 0;
-var altura = 0;
 
 export function agregar_registro(monto, billetera, resultado) {
   const datos_historial = {
@@ -47,19 +46,25 @@ function registro_juegos(registro) {
   new_row.appendChild(celda_saldo);
   new_row.classList.add("rows");
   cuerpo.appendChild(new_row);
-  let alt = cuerpo.firstChild.clientHeight;
-  altura += alt;
-  redimencionar();
+  redimencionar(jugadas);
 }
 
-export function redimencionar() {
+export function redimencionar(jugadas) {
   let body = document.querySelector("body");
-  window.addEventListener("resize", function (event) {
-    if (screen.width >= 1024) {
-      body.style.height = "fit-content";
-      body.style.marginBottom = "40px";
-    } else if (screen.width < 1024) {
-      body.style.marginBottom = `${altura}px`;
+  let ancho = screen.width * 1.1;
+
+  let tabla = document.querySelector(".ultimos_resultados");
+  let altura_final = Math.round(tabla.clientHeight + ancho);
+  if (screen.width < 1024) {
+    if (altura_final > screen.height) {
+      body.style.height = ` ${altura_final}px`;
+    } else if (altura_final < screen.height) {
+      body.style.height = "100vh";
     }
-  });
+  } else if (screen.width >= 1024) {
+    if (jugadas > 15) {
+      let altura = jugadas * 1.15;
+      body.style.height = `calc(100vh + ${altura}vh)`;
+    }
+  }
 }
